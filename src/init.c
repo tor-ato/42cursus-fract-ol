@@ -39,18 +39,18 @@ void	init_fractol(t_fractol *fractol)
 		free(fractol->mlx_conection);
 		malloc_error();
 	}
-	fractol->data.img_ptr = mlx_new_image(fractol->mlx_conection,
+	fractol->data.data_ptr = mlx_new_image(fractol->mlx_conection,
 										WIDTH,
 										HIGHT);
-	if (!fractol->data.img_ptr)
+	if (!fractol->data.data_ptr)
 	{
 		mlx_destroy_window(fractol->mlx_conection, fractol->mlx_window);
 		mlx_destroy_display(fractol->mlx_conection);
 		free(fractol->mlx_conection);
 		malloc_error();
 	}
-	fractol->data.pixels_ptr = mlx_get_data_addr(fractol->data.img_ptr,
-												&fractol->data.bpp,
-												&fractol->data.line_len,
+	fractol->data.data_ptr = mlx_get_data_addr(fractol->data.data_ptr,
+												&fractol->data.bits_per_line,
+												&fractol->data.bits_per_pixel,
 												&fractol->data.endian);
 }

@@ -30,7 +30,7 @@ t_complex_num squares_complexnum(t_complex_num z)
 	return (squared);
 }
 
-double	scale_positon(double unscaled_positon,
+double	scale(double unscaled_positon,
 					double new_min,
 					double new_max,
 					double old_min,
