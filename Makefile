@@ -19,8 +19,9 @@ SRC_DIR	:= src
 OBJ_DIR	:= obj
 
 CC		:= cc
-CFLAG	:= -Wall -Wextra -Werror -I./inc/ -I./libft/includes/ -I./mlx/
-MLXFLAG	:= -Lmlx -lmlx -lXext -lX11 -lm -O3
+CLAG	:= -Wall -Wextra -Werror
+INC 	:= -I inc -I ibft/includes -I mlx
+MLXFLAG	:= -lft -lmlx -Imlx -lmlx_linux -lXext -lX11 -lm -O3
 RM		:= rm -rf
 
 SRC		:= src/render.c src/main.c src/utils.c src/init.c
@@ -29,7 +30,7 @@ OBJ		:= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJ)
-	$(CC) $(CFLAG) $(MLXFLAG) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) $(CFLAG) $(INC) $(MLXFLAG) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(@D)
@@ -37,6 +38,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 $(LIBFT):
 	make -C libft
+	cp $(LIBFT) .
 
 $(MLX):
 	make -C mlx

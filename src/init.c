@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
-#include <stdio.h>
 
 static void	malloc_error(void)
 {
