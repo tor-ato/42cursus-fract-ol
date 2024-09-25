@@ -16,7 +16,7 @@ static void	my_pixel_put(t_data *data, int x, int y, int color)
 {
 	int offset;
 
-	offset = (data->bits_per_line * y) + (x * data->bits_per_pixel / 8);
+	offset = (data->bits_per_line * y) + (x * (data->bits_per_pixel / 8));
 	*((unsigned int *)(offset + data->image_ptr)) = color;
 }
 
@@ -38,8 +38,8 @@ static void	calculate_pixel(int x,int y, t_fractol *fractol)
 
 		if ((z.r * z.r) + (z.i * z.i) > fractol->escape_value)
 		{
-			color = scale(i, BLACK, WHITE, 0, fractol->max_iteration);
-			my_pixel_put(&fractol->data, z.r, z.i, color);
+			color = scale(i, WHITE, RED, 0, fractol->max_iteration);
+			my_pixel_put(&fractol->data, x, y, color);
 			return ;
 		}
 		i++;

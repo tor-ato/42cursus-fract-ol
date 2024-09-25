@@ -19,9 +19,9 @@ SRC_DIR	:= src
 OBJ_DIR	:= obj
 
 CC		:= cc
-CLAG	:= -Wall -Wextra -Werror
+CLAG	:= -Wall -Wextra -Werror -g
 INC 	:= -I inc -I ibft/includes -I mlx
-MLXFLAG	:= -lft -lmlx -Imlx -lmlx_linux -lXext -lX11 -lm -O3
+MLXFLAG	:= -Llibft -Lmlx -lmlx -lft -Imlx -lXext -lX11 -lm -O3
 RM		:= rm -rf
 
 SRC		:= src/render.c src/main.c src/utils.c src/init.c
@@ -38,11 +38,9 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 $(LIBFT):
 	make -C libft
-	cp $(LIBFT) .
 
 $(MLX):
 	make -C mlx
-	cp $(MLX) .
 
 clean:
 	make -C libft clean
@@ -51,7 +49,7 @@ clean:
 
 fclean: clean
 	make -C libft fclean
-	$(RM) $(NAME) libmlx_Linux.a
+	$(RM) $(NAME)
 
 re: fclean all
 

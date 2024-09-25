@@ -36,5 +36,5 @@ double	scale(double unscaled_positon,
 					double old_min,
 					double old_max)
 {
-	return ((new_max - new_min) * (unscaled_positon - old_min) / (old_max - old_min) + new_min);
+	return (new_max - new_min) * (unscaled_positon - old_min) / (old_max - old_min) + new_min;
 }

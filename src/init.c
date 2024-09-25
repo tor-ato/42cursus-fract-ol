@@ -18,10 +18,10 @@ static void	malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
-/*void	data_init(t_fractol *fractol)*/
-/*{*/
-/*	fractol->escape_value = 4;*/
-/*}*/
+void	data_init(t_fractol *fractol)
+{
+	fractol->escape_value = 4;
+}
 
 void	init_fractol(t_fractol *fractol)
 {
@@ -48,8 +48,9 @@ void	init_fractol(t_fractol *fractol)
 		free(fractol->mlx_conection);
 		malloc_error();
 	}
-	fractol->data.data_ptr = mlx_get_data_addr(fractol->data.data_ptr,
-												&fractol->data.bits_per_line,
+	fractol->data.image_ptr = mlx_get_data_addr(fractol->data.data_ptr,
 												&fractol->data.bits_per_pixel,
+												&fractol->data.bits_per_line,
 												&fractol->data.endian);
+	data_init(fractol);
 }
