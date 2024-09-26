@@ -15,6 +15,7 @@
 static void	init_data(t_fractol *fractol)
 {
 	fractol->escape_value = 4;
+	fractol->max_iteration = 42;
 }
 
 void	init_fractol(t_fractol *fractol)

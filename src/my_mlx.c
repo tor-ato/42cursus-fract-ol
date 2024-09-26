@@ -29,7 +29,7 @@ void	my_mlx_new_window(t_fractol *fractol)
 {
 	fractol->mlx_window = mlx_new_window(fractol->mlx_conection,
 			WIDTH,
-			HIGHT,
+			HEIGHT,
 			fractol->title);
 	if (!fractol->mlx_window)
 	{
@@ -43,7 +43,7 @@ void	my_mlx_new_image(t_fractol *fractol)
 {
 	fractol->data.data_ptr = mlx_new_image(fractol->mlx_conection,
 			WIDTH,
-			HIGHT);
+			HEIGHT);
 	if (!fractol->data.data_ptr)
 	{
 		mlx_destroy_window(fractol->mlx_conection, fractol->mlx_window);
