@@ -31,7 +31,7 @@ static void	calculate_pixel(int x, int y, t_fractol *fractol)
 	z.r = 0.0;
 	z.i = 0.0;
 	c.r = scale(x, -2, +2, WIDTH);
-	c.i = scale(y, +2, -2, HIGHT);
+	c.i = scale(y, +2, -2, HEIGHT);
 	color = 0;
 	while (i < fractol->max_iteration)
 	{
@@ -52,7 +52,7 @@ void	render_fractol(t_fractol *fractol)
 	int	y;
 
 	y = -1;
-	while (++y < HIGHT)
+	while (++y < HEIGHT)
 	{
 		x = -1;
 		while (++x < WIDTH)
