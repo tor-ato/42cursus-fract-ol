@@ -30,14 +30,15 @@ static void	calculate_pixel(int x, int y, t_fractol *fractol)
 	i = 0;
 	z.r = 0.0;
 	z.i = 0.0;
-	c.r = scale(x, -2, +2, 0, WIDTH);
-	c.i = scale(y, +2, -2, 0, HIGHT);
+	c.r = scale(x, -2, +2, WIDTH);
+	c.i = scale(y, +2, -2, HIGHT);
+	color = 0;
 	while (i < fractol->max_iteration)
 	{
 		z = sum_complexnum(squares_complexnum(z), c);
 		if ((z.r * z.r) + (z.i * z.i) > fractol->escape_value)
 		{
-			color = scale(i, WHITE, RED, 0, fractol->max_iteration);
+			color = scale(i, WHITE, BLACK, fractol->max_iteration);
 			my_pixel_put(&fractol->data, x, y, color);
 			return ;
 		}
