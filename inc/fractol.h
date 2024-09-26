@@ -21,6 +21,8 @@
 # define ERROR_MESSAGE "Please enter \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <value_1> <value_2>\"\n"
 # define WIDTH 800
 # define HIGHT 800
+# define MANDELBROT_ARGC 2
+# define JULIA_ARGC 4
 
 #define BLACK    	0x000000
 #define WHITE      	0xFFFFFF
