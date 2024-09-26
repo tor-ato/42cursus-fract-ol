@@ -6,7 +6,7 @@
 /*   By: tkitahar <tkitahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:24:31 by tkitahar          #+#    #+#             */
-/*   Updated: 2024/09/24 19:55:09 by tkitahar         ###   ########.fr       */
+/*   Updated: 2024/09/26 13:09:36 by tkitahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,15 @@ typedef struct s_fractol
 	
 }			t_fractol;
 
+// init.c
 void	init_fractol(t_fractol *fractol);
+//render.c
 void	render_fractol(t_fractol *fractol);
+//my_mlx.c
+void	my_mlx_init(t_fractol *fractol);
+void	my_mlx_new_window(t_fractol *fractol);
+void	my_mlx_new_image(t_fractol *fractol);
+void	my_mlx_get_data_addr(t_fractol *fractol);
 
 t_complex_num	sum_complexnum(t_complex_num z1, t_complex_num z2);
 t_complex_num 	squares_complexnum(t_complex_num z);
