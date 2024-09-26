@@ -26,7 +26,7 @@ static void	init_events(t_fractol *fractol)
 			key_handler,
 			fractol);
 	/*mlx_hook(fractol->mlx_window,*/
-	/*		ButtonPress,*/
+
 	/*		ButtonPressMask,*/
 	/*		mouse_handler,*/
 	/*		fractol);*/
