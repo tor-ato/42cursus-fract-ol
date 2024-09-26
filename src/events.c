@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
+#include <X11/Xutil.h>
 
 int	close_handler(t_fractol *fractol)
 {
@@ -25,5 +26,7 @@ int	key_handler(int keysym, t_fractol *fractol)
 {
 	if (keysym == XK_Escape)
 		close_handler(fractol);
+	else if (keysym == XK_plus)
+	else if (keysym == XK_minus)
 	return 0;
 }
