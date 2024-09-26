@@ -24,7 +24,7 @@ INC 	:= -I inc -I ibft/includes -I mlx
 MLXFLAG	:= -Llibft -Lmlx -lmlx -lft -Imlx -lXext -lX11 -lm -O3
 RM		:= rm -rf
 
-SRC		:= src/render.c src/main.c src/utils.c src/init.c src/my_mlx.c
+SRC		:= src/render.c src/main.c src/math_utils.c src/init.c src/my_mlx.c
 OBJ		:= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 all: $(NAME)
