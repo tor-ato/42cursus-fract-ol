@@ -18,10 +18,12 @@ static void	malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
-void	data_init(t_fractol *fractol)
+static void	init_data(t_fractol *fractol)
 {
 	fractol->escape_value = 4;
 }
+
+static void	my_mlx_init(t_fractol *fractol){}
 
 void	init_fractol(t_fractol *fractol)
 {
@@ -29,9 +31,9 @@ void	init_fractol(t_fractol *fractol)
 	if (!fractol->mlx_conection)
 		malloc_error();
 	fractol->mlx_window = mlx_new_window(fractol->mlx_conection,
-										WIDTH,
-										HIGHT,
-										fractol->title);
+			WIDTH,
+			HIGHT,
+			fractol->title);
 	if (!fractol->mlx_window)
 	{
 		mlx_destroy_display(fractol->mlx_conection);
@@ -39,8 +41,8 @@ void	init_fractol(t_fractol *fractol)
 		malloc_error();
 	}
 	fractol->data.data_ptr = mlx_new_image(fractol->mlx_conection,
-										WIDTH,
-										HIGHT);
+			WIDTH,
+			HIGHT);
 	if (!fractol->data.data_ptr)
 	{
 		mlx_destroy_window(fractol->mlx_conection, fractol->mlx_window);
@@ -49,8 +51,8 @@ void	init_fractol(t_fractol *fractol)
 		malloc_error();
 	}
 	fractol->data.image_ptr = mlx_get_data_addr(fractol->data.data_ptr,
-												&fractol->data.bits_per_pixel,
-												&fractol->data.bits_per_line,
-												&fractol->data.endian);
-	data_init(fractol);
+			&fractol->data.bits_per_pixel,
+			&fractol->data.bits_per_line,
+			&fractol->data.endian);
+	init_data(fractol);
 }

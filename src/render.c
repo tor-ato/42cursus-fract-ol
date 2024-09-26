@@ -14,13 +14,13 @@
 
 static void	my_pixel_put(t_data *data, int x, int y, int color)
 {
-	int offset;
+	int	offset;
 
 	offset = (data->bits_per_line * y) + (x * (data->bits_per_pixel / 8));
 	*((unsigned int *)(offset + data->image_ptr)) = color;
 }
 
-static void	calculate_pixel(int x,int y, t_fractol *fractol)
+static void	calculate_pixel(int x, int y, t_fractol *fractol)
 {
 	t_complex_num	z;
 	t_complex_num	c;
@@ -32,10 +32,9 @@ static void	calculate_pixel(int x,int y, t_fractol *fractol)
 	z.i = 0.0;
 	c.r = scale(x, -2, +2, 0, WIDTH);
 	c.i = scale(y, +2, -2, 0, HIGHT);
-	while (i < fractol->max_iteration) 
+	while (i < fractol->max_iteration)
 	{
 		z = sum_complexnum(squares_complexnum(z), c);
-
 		if ((z.r * z.r) + (z.i * z.i) > fractol->escape_value)
 		{
 			color = scale(i, WHITE, RED, 0, fractol->max_iteration);
@@ -48,10 +47,10 @@ static void	calculate_pixel(int x,int y, t_fractol *fractol)
 
 void	render_fractol(t_fractol *fractol)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
-	y  = -1;
+	y = -1;
 	while (++y < HIGHT)
 	{
 		x = -1;
@@ -61,7 +60,7 @@ void	render_fractol(t_fractol *fractol)
 		}
 	}
 	mlx_put_image_to_window(fractol->mlx_conection,
-							fractol->mlx_window,
-							fractol->data.data_ptr,
-							0, 0);
+		fractol->mlx_window,
+		fractol->data.data_ptr,
+		0, 0);
 }

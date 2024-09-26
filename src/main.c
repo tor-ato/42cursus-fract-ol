@@ -12,12 +12,14 @@
 
 #include "../inc/fractol.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_fractol	fractol;
 
-	if (!((argc == 2 && ft_strcmp(argv[1], "mandelbrot") == STRCMP_OK)
-		|| (argc == 4 && ft_strcmp(argv[1], "julia"))))
+	if (!((argc == MANDELBROT_ARGC
+				&& ft_strcmp(argv[1], "mandelbrot") == STRCMP_OK)
+			|| (argc == JULIA_ARGC
+				&& ft_strcmp(argv[1], "julia") == STRCMP_OK)))
 	{
 		ft_dprintf(STDERR_FILENO, ERROR_MESSAGE);
 		exit(EXIT_FAILURE);

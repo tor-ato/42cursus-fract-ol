@@ -21,7 +21,7 @@ t_complex_num	sum_complexnum(t_complex_num z1, t_complex_num z2)
 	return (summed);
 }
 
-t_complex_num squares_complexnum(t_complex_num z)
+t_complex_num	squares_complexnum(t_complex_num z)
 {
 	t_complex_num	squared;
 
@@ -36,5 +36,6 @@ double	scale(double unscaled_positon,
 					double old_min,
 					double old_max)
 {
-	return (new_max - new_min) * (unscaled_positon - old_min) / (old_max - old_min) + new_min;
+	return ((new_max - new_min) * (unscaled_positon - old_min)
+		/ (old_max - old_min) + new_min);
 }
