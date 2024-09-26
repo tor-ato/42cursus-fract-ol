@@ -6,7 +6,7 @@
 #    By: tkitahar <tkitahar@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 15:21:59 by tkitahar          #+#    #+#              #
-#    Updated: 2024/09/26 13:12:22 by tkitahar         ###   ########.fr        #
+#    Updated: 2024/09/26 16:11:25 by tkitahar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INC 	:= -I inc -I ibft/includes -I mlx
 MLXFLAG	:= -Llibft -Lmlx -lmlx -lft -Imlx -lXext -lX11 -lm -O3
 RM		:= rm -rf
 
-SRC		:= src/render.c src/main.c src/math_utils.c src/init.c src/my_mlx.c
+SRC		:= src/render.c src/main.c src/math_utils.c src/init.c src/my_mlx.c src/events.c
 OBJ		:= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 all: $(NAME)

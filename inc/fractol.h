@@ -6,7 +6,7 @@
 /*   By: tkitahar <tkitahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:24:31 by tkitahar          #+#    #+#             */
-/*   Updated: 2024/09/26 13:09:36 by tkitahar         ###   ########.fr       */
+/*   Updated: 2024/09/26 16:12:36 by tkitahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/includes/libft.h"
 # include "../mlx/mlx.h"
 # include "../mlx/mlx_int.h"
+# include <X11/X.h>
 
 # define STRCMP_OK	0
 # define ERROR_MESSAGE "Please enter \n\t\"./fractol mandelbrot\" or\
@@ -83,4 +84,7 @@ double			scale(double unscaled_num,
 					double new_min,
 					double new_max,
 					double old_max);
+// events.c
+int	key_handler(int keysym, t_fractol *fractol);
+
 #endif
