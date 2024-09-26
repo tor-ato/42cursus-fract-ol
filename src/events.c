@@ -12,7 +12,7 @@
 
 #include "../inc/fractol.h"
 
-void	close_handler(t_fractol *fractol)
+int	close_handler(t_fractol *fractol)
 {
 	mlx_destroy_image(fractol->mlx_conection, fractol->data.data_ptr);
 	mlx_destroy_window(fractol->mlx_conection, fractol->mlx_window);

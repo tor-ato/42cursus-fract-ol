@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
-#include <X11/X.h>
 
 static void	init_data(t_fractol *fractol)
 {
@@ -31,11 +30,11 @@ static void	init_events(t_fractol *fractol)
 	/*		ButtonPressMask,*/
 	/*		mouse_handler,*/
 	/*		fractol);*/
-	/*mlx_hook(fractol->mlx_window,*/
-	/*		DestroyNotify,*/
-	/*		StructureNotifyMask,*/
-	/*		close_handler,*/
-	/*		fractol);*/
+	mlx_hook(fractol->mlx_window,
+			DestroyNotify,
+			StructureNotifyMask,
+			close_handler,
+			fractol);
 }
 
 void	init_fractol(t_fractol *fractol)

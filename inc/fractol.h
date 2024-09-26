@@ -86,5 +86,6 @@ double			scale(double unscaled_num,
 					double old_max);
 // events.c
 int				key_handler(int keysym, t_fractol *fractol);
+int			close_handler(t_fractol *fractol);
 
 #endif
