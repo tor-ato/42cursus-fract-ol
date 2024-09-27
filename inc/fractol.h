@@ -66,7 +66,9 @@ typedef struct s_fractol
 
 	t_data	data;
 	double	escape_value;
-	int		max_iteration;	
+	int		max_iteration;
+	double	shift_x;
+	double	shift_y;
 }			t_fractol;
 
 // init.c
@@ -85,7 +87,7 @@ double			scale(double unscaled_num,
 					double new_max,
 					double old_max);
 // events.c
-int				key_handler(int keysym, t_fractol *fractol);
+int				key_press_handler(int keysym, t_fractol *fractol);
 int				close_handler(t_fractol *fractol);
 
 #endif

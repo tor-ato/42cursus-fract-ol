@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
-#include <X11/Xutil.h>
 
 int	close_handler(t_fractol *fractol)
 {
@@ -22,7 +21,7 @@ int	close_handler(t_fractol *fractol)
 	exit(EXIT_SUCCESS);
 }
 
-int	key_handler(int keysym, t_fractol *fractol)
+int	key_press_handler(int keysym, t_fractol *fractol)
 {
 	if (keysym == XK_Escape)
 		close_handler(fractol);
@@ -30,5 +29,14 @@ int	key_handler(int keysym, t_fractol *fractol)
 		fractol->max_iteration += 10;
 	else if (keysym == XK_minus)
 		fractol->max_iteration -= 10;
+	else if (keysym == XK_Up)
+		fractol->shift_y += 0.1; 
+	else if (keysym == XK_Down)
+		fractol->shift_y -= 0.1;
+	else if (keysym == XK_Left)
+		fractol->shift_x -= 0.1;
+	else if (keysym == XK_Right)
+		fractol->shift_x += 0.1;
+	render_fractol(fractol);
 	return 0;
 }

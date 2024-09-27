@@ -30,8 +30,8 @@ static void	calculate_pixel(int x, int y, t_fractol *fractol)
 	i = 0;
 	z.r = 0.0;
 	z.i = 0.0;
-	c.r = scale(x, -2, +2, WIDTH);
-	c.i = scale(y, +2, -2, HEIGHT);
+	c.r = scale(x, -2, +2, WIDTH) + fractol->shift_x;
+	c.i = scale(y, +2, -2, HEIGHT) + fractol->shift_y;
 	color = 0;
 	while (i < fractol->max_iteration)
 	{
@@ -42,7 +42,7 @@ static void	calculate_pixel(int x, int y, t_fractol *fractol)
 			my_pixel_put(&fractol->data, x, y, color);
 			return ;
 		}
-		i++;
+		++i;
 	}
 }
 

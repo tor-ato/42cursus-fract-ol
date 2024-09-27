@@ -16,6 +16,8 @@ static void	init_data(t_fractol *fractol)
 {
 	fractol->escape_value = 4;
 	fractol->max_iteration = 42;
+	fractol->shift_x = 0;
+	fractol->shift_y = 0;
 }
 
 static void	init_events(t_fractol *fractol)
@@ -23,10 +25,10 @@ static void	init_events(t_fractol *fractol)
 	mlx_hook(fractol->mlx_window,
 			KeyPress,
 			KeyPressMask,
-			key_handler,
+			key_press_handler,
 			fractol);
 	/*mlx_hook(fractol->mlx_window,*/
-
+	/*		ButtonPress,*/
 	/*		ButtonPressMask,*/
 	/*		mouse_handler,*/
 	/*		fractol);*/
