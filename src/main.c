@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_fractol	fractol;
 
 	if (!((argc == MANDELBROT_ARGC
-			&& ft_strcmp(argv[1], "mandelbrot") == STRCMP_OK)
+				&& ft_strcmp(argv[1], "mandelbrot") == STRCMP_OK)
 			|| (argc == JULIA_ARGC
 				&& ft_strcmp(argv[1], "julia") == STRCMP_OK)))
 	{
