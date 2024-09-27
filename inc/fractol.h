@@ -69,6 +69,7 @@ typedef struct s_fractol
 	int		max_iteration;
 	double	shift_x;
 	double	shift_y;
+	double	zoom;
 }			t_fractol;
 
 // init.c
@@ -89,5 +90,6 @@ double			scale(double unscaled_num,
 // events.c
 int				key_press_handler(int keysym, t_fractol *fractol);
 int				close_handler(t_fractol *fractol);
+int				mouse_handler(int button, int x, int y, t_fractol *fractol);
 
 #endif

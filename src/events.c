@@ -21,6 +21,20 @@ int	close_handler(t_fractol *fractol)
 	exit(EXIT_SUCCESS);
 }
 
+int	mouse_handler(int button, int x, int y, t_fractol *fractol)
+{
+	if (button == Button4)
+	{
+		fractol->zoom *= 0.95;
+	}
+	else if (button == Button5)
+	{
+		fractol->zoom *= 1.05;
+	}
+	render_fractol(fractol);
+	return (0);
+}
+
 int	key_press_handler(int keysym, t_fractol *fractol)
 {
 	if (keysym == XK_Escape)

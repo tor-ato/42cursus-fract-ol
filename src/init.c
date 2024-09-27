@@ -18,6 +18,7 @@ static void	init_data(t_fractol *fractol)
 	fractol->max_iteration = 42;
 	fractol->shift_x = 0;
 	fractol->shift_y = 0;
+	fractol->zoom = 1;
 }
 
 static void	init_events(t_fractol *fractol)
@@ -27,11 +28,11 @@ static void	init_events(t_fractol *fractol)
 		KeyPressMask,
 		key_press_handler,
 		fractol);
-	/*mlx_hook(fractol->mlx_window,*/
-	/*		ButtonPress,*/
-	/*		ButtonPressMask,*/
-	/*		mouse_handler,*/
-	/*		fractol);*/
+	mlx_hook(fractol->mlx_window,
+		ButtonPress,
+		ButtonPressMask,
+		mouse_handler,
+		fractol);
 	mlx_hook(fractol->mlx_window,
 		DestroyNotify,
 		StructureNotifyMask,
