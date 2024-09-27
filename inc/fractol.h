@@ -81,7 +81,7 @@ void			my_mlx_new_window(t_fractol *fractol);
 void			my_mlx_new_image(t_fractol *fractol);
 void			my_mlx_get_data_addr(t_fractol *fractol);
 t_complex_num	sum_complexnum(t_complex_num z1, t_complex_num z2);
-t_complex_num	squares_complexnum(t_complex_num z);
+t_complex_num	square_complexnum(t_complex_num z);
 double			scale(double unscaled_num,
 					double new_min,
 					double new_max,

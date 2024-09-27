@@ -21,7 +21,7 @@ t_complex_num	sum_complexnum(t_complex_num z1, t_complex_num z2)
 	return (summed);
 }
 
-t_complex_num	squares_complexnum(t_complex_num z)
+t_complex_num	square_complexnum(t_complex_num z)
 {
 	t_complex_num	squared;
 
