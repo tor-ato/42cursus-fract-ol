@@ -6,7 +6,7 @@
 /*   By: tkitahar <tkitahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:56:21 by tkitahar          #+#    #+#             */
-/*   Updated: 2024/09/26 16:14:41 by tkitahar         ###   ########.fr       */
+/*   Updated: 2024/09/27 15:40:09 by tkitahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	key_press_handler(int keysym, t_fractol *fractol)
 	else if (keysym == XK_minus)
 		fractol->max_iteration -= 10;
 	else if (keysym == XK_Up)
-		fractol->shift_y += 0.1; 
+		fractol->shift_y += 0.1;
 	else if (keysym == XK_Down)
 		fractol->shift_y -= 0.1;
 	else if (keysym == XK_Left)
@@ -38,5 +38,5 @@ int	key_press_handler(int keysym, t_fractol *fractol)
 	else if (keysym == XK_Right)
 		fractol->shift_x += 0.1;
 	render_fractol(fractol);
-	return 0;
+	return (0);
 }
