@@ -25,6 +25,11 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	fractol.title = argv[1];
+	if (ft_strcmp(fractol.title, "julia") == STRCMP_OK)
+	{
+		fractol.julia_x = atodbl(argv[2]);
+		fractol.julia_y = atodbl(argv[3]);
+	}
 	init_fractol(&fractol);
 	render_fractol(&fractol);
 	mlx_loop(fractol.mlx_conection);

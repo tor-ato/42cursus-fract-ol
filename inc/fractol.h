@@ -71,6 +71,8 @@ typedef struct s_fractol
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
+	double	julia_x;
+	double	julia_y;
 }			t_fractol;
 
 // init.c
@@ -82,12 +84,14 @@ void			my_mlx_init(t_fractol *fractol);
 void			my_mlx_new_window(t_fractol *fractol);
 void			my_mlx_new_image(t_fractol *fractol);
 void			my_mlx_get_data_addr(t_fractol *fractol);
+// math_utils
 t_complex_num	sum_complexnum(t_complex_num z1, t_complex_num z2);
 t_complex_num	square_complexnum(t_complex_num z);
 double			scale(double unscaled_num,
 					double new_min,
 					double new_max,
 					double old_max);
+double			atodbl(char *s);
 // events.c
 int				key_press_handler(int keysym, t_fractol *fractol);
 int				close_handler(t_fractol *fractol);

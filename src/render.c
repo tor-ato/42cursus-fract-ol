@@ -20,6 +20,20 @@ static void	my_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)(offset + data->image_ptr) = color;
 }
 
+static void	init_c_mandel_or_julia(t_complex_num *z, t_complex_num *c, t_fractol *fractol)
+{
+	if (ft_strcmp(fractol->title, "julia") == STRCMP_OK)
+	{
+		c->r = fractol->julia_x;
+		c->i = fractol->julia_y;
+	}
+	else
+	{
+		c->r = z->r;
+		c->i = z->i;
+	}
+}
+
 static void	calculate_pixel(int x, int y, t_fractol *fractol)
 {
 	t_complex_num	z;
@@ -28,15 +42,13 @@ static void	calculate_pixel(int x, int y, t_fractol *fractol)
 	int				color;
 
 	i = 0;
-	z.r = 0.0;
-	z.i = 0.0;
-	c.r = (scale(x, -2, +2, WIDTH) * fractol->zoom) + fractol->shift_x;
-	c.i = (scale(y, +2, -2, HEIGHT) * fractol->zoom ) + fractol->shift_y;
+	z.r = (scale(x, -2, +2, WIDTH) * fractol->zoom) + fractol->shift_x;
+	z.i = (scale(y, +2, -2, HEIGHT) * fractol->zoom) + fractol->shift_y;
 	color = 0;
+	init_c_mandel_or_julia(&z, &c, fractol);
 	while (i < fractol->max_iteration)
 	{
 		z = sum_complexnum(square_complexnum(z), c);
-
 		if ((z.r * z.r) + (z.i * z.i) > fractol->escape_value)
 		{
 			color = scale(i, WHITE, BLACK, fractol->max_iteration);
@@ -46,7 +58,6 @@ static void	calculate_pixel(int x, int y, t_fractol *fractol)
 		++i;
 	}
 	my_pixel_put(&fractol->data, x, y, color);
-
 }
 
 void	render_fractol(t_fractol *fractol)

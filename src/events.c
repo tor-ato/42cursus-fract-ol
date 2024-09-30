@@ -43,13 +43,13 @@ int	key_press_handler(int keysym, t_fractol *fractol)
 	else if (keysym == XK_minus)
 		fractol->max_iteration -= 10;
 	else if (keysym == XK_Up)
-		fractol->shift_y += 0.1;
+		fractol->shift_y += (0.1 * fractol->zoom);
 	else if (keysym == XK_Down)
-		fractol->shift_y -= 0.1;
+		fractol->shift_y -= (0.1 * fractol->zoom);
 	else if (keysym == XK_Left)
-		fractol->shift_x -= 0.1;
+		fractol->shift_x -= (0.1 * fractol->zoom);
 	else if (keysym == XK_Right)
-		fractol->shift_x += 0.1;
+		fractol->shift_x += (0.1 * fractol->zoom);
 	render_fractol(fractol);
 	return (0);
 }
