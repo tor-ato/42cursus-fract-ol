@@ -20,7 +20,9 @@ static void	my_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)(offset + data->image_ptr) = color;
 }
 
-static void	init_c_mandel_or_julia(t_complex_num *z, t_complex_num *c, t_fractol *fractol)
+static void	init_c_mandel_or_julia(t_complex_num *z,
+		t_complex_num *c,
+		t_fractol *fractol)
 {
 	if (ft_strcmp(fractol->title, "julia") == STRCMP_OK)
 	{

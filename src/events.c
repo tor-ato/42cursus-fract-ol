@@ -38,7 +38,7 @@ int	key_press_handler(int keysym, t_fractol *fractol)
 {
 	if (keysym == XK_Escape)
 		close_handler(fractol);
-	else if (keysym == MY_XK_plus)
+	else if (keysym == MY_XK_PLUS)
 		fractol->max_iteration += 10;
 	else if (keysym == XK_minus)
 		fractol->max_iteration -= 10;

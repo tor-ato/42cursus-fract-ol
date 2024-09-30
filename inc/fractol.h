@@ -25,7 +25,7 @@
 # define HEIGHT 800
 # define MANDELBROT_ARGC 2
 # define JULIA_ARGC 4
-# define MY_XK_plus 59
+# define MY_XK_PLUS 59
 
 # define BLACK	0x000000
 # define WHITE	0xFFFFFF
