@@ -24,18 +24,19 @@ int	close_handler(t_fractol *fractol)
 
 int	mouse_handler(int button, int x, int y, t_fractol *fractol)
 {
-	if (button == Button4)
-	{
-		fractol->zoom *= 0.95;
-		fractol->shift_y += (0.1 * fractol->zoom);
-		fractol->shift_x -= (0.1 * fractol->zoom);
-	}
-	else if (button == Button5)
-	{
+	double	mouse_r;
+	double	mouse_i;
+
+	mouse_r = scale(x, -2, +2, WIDTH) * fractol->zoom + fractol->shift_x;
+	mouse_i = scale(y, +2, -2, HEIGHT) * fractol->zoom + fractol->shift_y;
+	if (button == Button5)
 		fractol->zoom *= 1.05;
-		fractol->shift_y += (0.1 * fractol->zoom);
-		fractol->shift_x -= (0.1 * fractol->zoom);
-	}
+	else if (button == Button4)
+		fractol->zoom *= 0.95;
+	else
+		return (0);
+	fractol->shift_x = mouse_r - (scale(x, -2, +2, WIDTH) * fractol->zoom);
+	fractol->shift_y = mouse_i - (scale(y, +2, -2, HEIGHT) * fractol->zoom);
 	render_fractol(fractol);
 	return (0);
 }

@@ -19,9 +19,9 @@ SRC_DIR	:= src
 OBJ_DIR	:= obj
 
 CC		:= cc
-CLAG	:= -Wall -Wextra -Werror -g
+CLAG	:= -Wall -Wextra -Werror
 INC 	:= -I inc -I ibft/includes -I mlx
-MLXFLAG	:= -Llibft -Lmlx -lmlx -lft -Imlx -lXext -lX11 -lm -O3
+MLXFLAG	:= -Llibft -Lmlx -lmlx -lft -Imlx -lXext -lX11 -lm -Ofast
 RM		:= rm -rf
 
 SRC		:= src/render.c src/main.c src/math_utils.c src/init.c src/my_mlx.c src/events.c
