@@ -72,9 +72,7 @@ void	render_fractol(t_fractol *fractol)
 	{
 		x = -1;
 		while (++x < WIDTH)
-		{
 			calculate_pixel(x, y, fractol);
-		}
 	}
 	mlx_put_image_to_window(fractol->mlx_conection,
 		fractol->mlx_window,
