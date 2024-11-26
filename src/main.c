@@ -12,6 +12,8 @@
 
 #include "../inc/fractol.h"
 
+render_coordinate(&fractol);
+
 int	main(int argc, char **argv)
 {
 	t_fractol	fractol;
@@ -32,5 +34,6 @@ int	main(int argc, char **argv)
 	}
 	init_fractol(&fractol);
 	render_fractol(&fractol);
+	render_coordinate(&fractol);
 	mlx_loop(fractol.mlx_conection);
 }
